@@ -57,6 +57,14 @@ h4
   font-size: $font-size_h4
   font-weight: $font-weight_h4
 
+h5
+  font-size: $font-size_h5
+  font-weight: $font-weight_h5
+
+h6
+  font-size: $font-size_h6
+  font-weight: $font-weight_h6
+
 blockquote
   margin: 0 $margin-blocks/6
   font-size: 1em
@@ -99,8 +107,13 @@ header
 
   .menu
     text-align: left
+    max-width: $max-width-content
+    margin: 0 auto
+    display: block
     p
       margin-bottom: 0px
+      display: inline-block
+      padding: .5rem
 
   .socials
     padding: $padding-content
@@ -125,7 +138,6 @@ header
     +transition(all 0.25s)
     line-height: $line-height_menu
     &:not(.social-link)
-      border-bottom: $grey-100 1px dashed
 
   a:hover, a:focus, a:active
     color: $secondary-color
@@ -136,11 +148,12 @@ header
   .intro
     padding: $padding-content
     position: absolute
+    top: 0
     bottom: 140px
 
   .rounded-logo
     +rounded
-    margin-bottom: 4/3*$margin-blocks
+    margin: auto
     display: block
     box-shadow: $box-shadow
 
