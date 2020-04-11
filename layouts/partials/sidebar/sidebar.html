@@ -7,18 +7,7 @@
       </a>
     </div>
     <h2>{{ .Site.Params.intro.main | default "Welcome, I'm John Doe" | emojify }}</h2>
-    <h3>{{ .Site.Params.intro.sub | default "This is my personal website" | emojify }}</h3>
-    <div class="menu">
-      {{ partial "sidebar/menu" . }}
-      {{ if .Site.Params.contact.email }}
-        {{ $email := printf "mailto:%s" .Site.Params.contact.email}}
-        <p>
-            <a href="{{ $email }}" target="_blank" rel="external">
-                {{ .Site.Params.contact.text | emojify }}
-            </a>
-        </p>
-      {{ end }}
-    </div>
+    <h5 id="about-me-description">{{ .Site.Params.intro.sub | default "This is my personal website" | emojify }}</h5>
 
   </div>
 
