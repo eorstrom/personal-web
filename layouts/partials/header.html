@@ -7,7 +7,19 @@
   {{ partialCached "sidebar/sidebar" .}}
 
   <div class="content-wrapper">
+    <div class="menu">
+      {{ partial "sidebar/menu" . }}
+      {{ if .Site.Params.contact.email }}
+        {{ $email := printf "mailto:%s" .Site.Params.contact.email}}
+        <p class="menu-item">
+            <a href="{{ $email }}" target="_blank" rel="external">
+                {{ .Site.Params.contact.text | emojify }}
+            </a>
+        </p>
+      {{ end }}
+    </div> 
     {{ if .Site.Params.breadcrumb }}
       {{ partial "breadcrumb" .}}
     {{ end }}
+    
     <main id="content" class="{{ .Section }}">
